@@ -1,4 +1,4 @@
-name = "remix-cloudflare-workers-template"
+name = "haydenuwu-blog"
 
 main = "./server.ts"
 workers_dev = true
