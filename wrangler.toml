@@ -10,3 +10,7 @@ bucket = "./build/client"
 
 [build]
 command = "npm run build"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "hbjy_kv_atpblog"

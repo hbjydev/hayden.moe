@@ -5,9 +5,9 @@ import { WhtwndBlogEntryView } from 'src/types';
 import { FormattedDate } from '../components/formatted-date';
 import Markdown from 'react-markdown';
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
   const { rkey } = params;
-  const post = await getPost(rkey!);
+  const post = await getPost(context, rkey!);
   return json({ post });
 };
 

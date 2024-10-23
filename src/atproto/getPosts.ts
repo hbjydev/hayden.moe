@@ -1,10 +1,17 @@
 import { WhtwndBlogEntryRecord, WhtwndBlogEntryView } from "src/types";
 import { atpAgent } from "./agent";
 import { whtwndBlogEntryRecordToView } from "./dataToView";
+import { AppLoadContext } from "@remix-run/cloudflare";
+import { getCachedPosts, setCachedPost, setCachedPosts } from "src/kv";
 
-export const getPosts = async (cursor: string | undefined, skipCache?: boolean) => {
-  const repo = process.env.ATP_IDENTIFIER!;
-  const res = await atpAgent.com.atproto.repo.listRecords({
+export const getPosts = async (ctx: AppLoadContext, cursor: string | undefined, skipCache?: boolean) => {
+  const cachedRes = await getCachedPosts(ctx);
+  if (!skipCache && cachedRes) {
+    return cachedRes;
+  }
+
+  const repo = ctx.cloudflare.env.ATP_IDENTIFIER;
+  const res = await atpAgent(ctx).com.atproto.repo.listRecords({
     collection: 'com.whtwnd.blog.entry',
     repo,
     cursor,
@@ -19,6 +26,11 @@ export const getPosts = async (cursor: string | undefined, skipCache?: boolean) 
     cid: data.cid?.toString() ?? '',
     value: data.value as WhtwndBlogEntryRecord,
   })) as WhtwndBlogEntryView[];
+
+  for (const post of posts) {
+    await setCachedPost(ctx, post);
+  }
+  await setCachedPosts(ctx, posts);
 
   return posts;
 }

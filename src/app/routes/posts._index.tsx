@@ -1,12 +1,12 @@
-import { json } from '@remix-run/cloudflare';
+import { json, LoaderFunctionArgs } from '@remix-run/cloudflare';
 import { useLoaderData } from '@remix-run/react';
 import { getPosts } from 'src/atproto/getPosts';
 import { WhtwndBlogEntryView } from 'src/types';
 import { FormattedDate } from '../components/formatted-date';
 import Markdown from 'react-markdown';
 
-export const loader = async () => {
-  const posts = await getPosts(undefined);
+export const loader = async ({ context }: LoaderFunctionArgs) => {
+  const posts = await getPosts(context, undefined);
 
   const postsFiltered = posts.filter(p => !p.content?.startsWith('NOT_LIVE'));
 
