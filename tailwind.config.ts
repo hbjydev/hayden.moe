@@ -38,9 +38,11 @@ export default {
         DEFAULT: {
           css: {
             color: theme('colors.white'),
+
             a: {
               color: theme('colors.pink'),
             },
+
             h1: {
               color: theme('colors.white'),
             },
@@ -58,6 +60,13 @@ export default {
                 color: 'var(--base04)',
               },
             },
+
+            pre: {
+              "background-color": 'var(--base00)',
+              "border": '1px solid var(--base02)',
+              'border-radius': '0',
+            },
+
             code: {
               color: 'var(--base0E)',
               '&::before': {
