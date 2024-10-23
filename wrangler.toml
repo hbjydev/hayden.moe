@@ -13,4 +13,4 @@ command = "npm run build"
 
 [[kv_namespaces]]
 binding = "CACHE"
-id = "hbjy_kv_atpblog"
+id = "d7e88adf8eb44f7b9e0544b43bfb27b4"
