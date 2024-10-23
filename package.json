@@ -19,6 +19,7 @@
     "@remix-run/cloudflare": "^2.13.1",
     "@remix-run/react": "^2.13.1",
     "@remix-run/server-runtime": "^2.13.1",
+    "feed": "^4.2.2",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
