@@ -3,7 +3,7 @@ import type { MetaFunction } from "@remix-run/cloudflare";
 export const meta: MetaFunction = () => {
   return [
     { title: "hayden@web ~" },
-    { name: "description", content: "The blog of a lowly DevOps Engineer from the UK." },
+    { name: "description", content: "The blog of a lowly DevOps Engineer from the UK. Federated on atproto!" },
   ];
 };
 
