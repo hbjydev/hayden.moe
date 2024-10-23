@@ -17,7 +17,7 @@ id = "d7e88adf8eb44f7b9e0544b43bfb27b4"
 
 [vars]
 ATP_IDENTIFIER = "hayden.moe"
-ATP_SERVICE = "https://inkcap.us-east.host.bsky.network/"
+ATP_SERVICE = "https://pds.hayden.moe/"
 
 [observability]
 enabled = true
