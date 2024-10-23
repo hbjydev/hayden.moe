@@ -1,9 +1,13 @@
-import { json, LoaderFunctionArgs } from '@remix-run/cloudflare';
+import { json, LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare';
 import { useLoaderData } from '@remix-run/react';
 import { getPosts } from 'src/atproto/getPosts';
 import { WhtwndBlogEntryView } from 'src/types';
 import { FormattedDate } from '../components/formatted-date';
 import Markdown from 'react-markdown';
+
+export const meta: MetaFunction = () => [
+  { title: 'hayden@web ~/posts' },
+];
 
 export const loader = async ({ context }: LoaderFunctionArgs) => {
   const posts = await getPosts(context, undefined);
