@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async ({ context }) => {
   const feed = new Feed({
     id: blogLink,
     title: 'hayden@web ~/posts',
-    description: '',
+    description: 'The blog of a lowly DevOps Engineer from the UK. Federated on atproto!',
     link: blogLink,
     language: 'en',
     updated: postsShortened.length > 0 ? new Date(postsShortened[0].createdAt) : new Date(),
@@ -27,9 +27,9 @@ export const loader: LoaderFunction = async ({ context }) => {
   });
 
   postsShortened.forEach(post => feed.addItem({
-    id: `${blogLink}/${post.cid}/`,
+    id: `${blogLink}/${post.rkey}/`,
     title: post.title,
-    link: `${blogLink}/${post.cid}/`,
+    link: `${blogLink}/${post.rkey}/`,
     date: new Date(post.createdAt),
     description: post.content,
   }));
