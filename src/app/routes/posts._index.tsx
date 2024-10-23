@@ -30,38 +30,38 @@ export default () => {
   }>();
 
   return (
-  <div className="-mx-5 flex flex-col">
-    <header className="flex flex-col border-b border-muted pb-5 px-5">
-      <h1 className="font-bold">Posts</h1>
-      <p className="text-[var(--base03)]">
-        Showing {posts.length} posts of {posts.length}.
-      </p>
-    </header>
+    <div className="-mx-5 flex flex-col">
+      <header className="flex flex-col border-b border-muted pb-5 px-5">
+        <h1 className="font-bold">Posts</h1>
+        <p className="text-[var(--base03)]">
+          Showing {posts.length} posts of {posts.length}.
+        </p>
+      </header>
 
-    <div>
-      {posts.map((post, idx) => (
-        <div className="px-5 py-4 border-b border-muted" key={idx}>
-          <article>
-            <header>
-              <h2 className="text-pink font-bold">
-                <a href={`/posts/${post.rkey}/`}>{post.title}</a>
-              </h2>
-              <p className="text-[var(--base03)]">
-                <span className="date">
-                  <FormattedDate date={new Date(Date.parse(post.createdAt))} />
-                </span>
-              </p>
-            </header>
-          </article>
+      <div>
+        {posts.map((post, idx) => (
+          <div className="px-5 py-4 border-b border-muted" key={idx}>
+            <article>
+              <header>
+                <h2 className="text-pink font-bold">
+                  <a href={`/posts/${post.rkey}/`}>{post.title}</a>
+                </h2>
+                <p className="text-[var(--base03)]">
+                  <span className="date">
+                    <FormattedDate date={new Date(Date.parse(post.createdAt))} />
+                  </span>
+                </p>
+              </header>
+            </article>
 
-          <section className="post__summary prose max-w-6xl">
-            <Markdown>
-              { post.content }
-            </Markdown>
-          </section>
-        </div>
-      ))}
+            <section className="post__summary prose max-w-6xl">
+              <Markdown>
+                { post.content }
+              </Markdown>
+            </section>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
   );
 };

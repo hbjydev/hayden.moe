@@ -38,8 +38,15 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export const loader = async ({ params, context }: LoaderFunctionArgs) => {
   const { rkey } = params;
-  const post = await getPost(context, rkey!);
-  return json({ post });
+  try {
+    const post = await getPost(context, rkey!);
+    return json({ post });
+  } catch(e) {
+    throw new Response(null, {
+      status: 404,
+      statusText: 'Post not found.',
+    });
+  }
 };
 
 export default () => {
@@ -48,16 +55,17 @@ export default () => {
   }>();
 
   return (
-  <>
-    <header className="-mx-5 px-5 border-b border-muted pb-5">
-      <h1 className="font-bold">{post.title}</h1>
-      <span className="text-[var(--base03)]">
-        <FormattedDate date={new Date(Date.parse(post.createdAt))} />
-      </span>
-    </header>
+    <>
+      <header className="-mx-5 px-5 border-b border-muted pb-5">
+        <h1 className="font-bold">{post.title}</h1>
+        <span className="text-[var(--base03)]">
+          <FormattedDate date={new Date(Date.parse(post.createdAt))} />
+        </span>
+      </header>
 
-    <Markdown className="prose max-w-5xl py-5">
-      {post.content}
-    </Markdown>
-  </>);
+      <Markdown className="prose max-w-5xl py-5">
+        {post.content}
+      </Markdown>
+    </>
+  );
 }

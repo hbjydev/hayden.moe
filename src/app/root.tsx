@@ -1,24 +1,26 @@
 import {
+    json,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
+  useLocation,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import type { LinksFunction, LoaderFunction } from "@remix-run/cloudflare";
 
 import "./tailwind.css";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 
+export const loader: LoaderFunction = ({ request }) => {
+  return json({
+    origin: new URL(request.url).origin,
+  });
+}
+
 export const links: LinksFunction = () => [
-  { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-  {
-    rel: "stylesheet",
-    href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css",
-    integrity: "sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==",
-    crossOrigin: "anonymous",
-  },
   {
     rel: 'canonical',
     href: 'https://hayden.moe',
@@ -30,11 +32,16 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const props = useLoaderData<{ origin: string; }>();
+  const { pathname } = useLocation()
+  const href = props ? props.origin + pathname : '';
+
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {href ? <link href={href} rel='canonical' /> : null}
         <Meta />
         <Links />
       </head>
