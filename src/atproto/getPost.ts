@@ -7,10 +7,8 @@ import { getCachedPost, setCachedPost } from "src/kv";
 export const getPost = async (ctx: AppLoadContext, rkey: string, skipCache?: boolean) => {
   const cachedRes = await getCachedPost(ctx, rkey);
   if (!skipCache && cachedRes) {
-    console.log('cache hit!');
     return cachedRes;
   }
-  console.log('cache not hit!');
 
   const repo = ctx.cloudflare.env.ATP_IDENTIFIER;
   const res = await atpAgent(ctx).com.atproto.repo.getRecord({
