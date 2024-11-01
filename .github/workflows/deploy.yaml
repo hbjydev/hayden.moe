@@ -25,6 +25,8 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
+      - run: pnpm build
+
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
