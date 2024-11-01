@@ -1,15 +1,6 @@
 name = "haydenuwu-blog"
-
-main = "./server.ts"
-workers_dev = true
-# https://developers.cloudflare.com/workers/platform/compatibility-dates
 compatibility_date = "2023-04-20"
-
-[site]
-bucket = "./build/client"
-
-[build]
-command = "npm run build"
+pages_build_output_dir = "./build/client"
 
 [[kv_namespaces]]
 binding = "CACHE"
@@ -18,7 +9,3 @@ id = "d7e88adf8eb44f7b9e0544b43bfb27b4"
 [vars]
 ATP_IDENTIFIER = "hayden.moe"
 ATP_SERVICE = "https://pds.hayden.moe/"
-
-[observability]
-enabled = true
-head_sampling_rate = 0.4  # 40% of requests are logged, enough to troubleshoot

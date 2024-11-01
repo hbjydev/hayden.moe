@@ -2,7 +2,6 @@
 
 interface Env {
 	CACHE: KVNamespace;
-	ATP_SERVICE: string;
-	ATP_IDENTIFIER: string;
-	ATP_DID: string;
+	ATP_IDENTIFIER: "hayden.moe";
+	ATP_SERVICE: "https://pds.hayden.moe/";
 }
