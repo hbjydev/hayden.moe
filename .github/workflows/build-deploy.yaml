@@ -1,18 +1,12 @@
 ---
-name: Deploy
+name: Build & Deploy
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    name: Deploy
-    environment:
-      name: prod
-      url: https://hayden.moe
+    name: Build
     steps:
       - uses: actions/checkout@v4
 
@@ -28,6 +22,21 @@ jobs:
       - run: pnpm install
       - run: pnpm build
 
+      - uses: actions/upload-artifact@master
+        with:
+          name: build
+          path: build
+
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    environment:
+      name: prod
+      url: https://hayden.moe
+    needs: [build]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
