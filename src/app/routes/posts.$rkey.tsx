@@ -3,12 +3,7 @@ import { useLoaderData } from '@remix-run/react';
 import { getPost } from 'src/atproto/getPost';
 import { WhtwndBlogEntryView } from 'src/types';
 import { FormattedDate } from '../components/formatted-date';
-import { unified } from 'unified';
-import rehypeShiki from '@shikijs/rehype';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import rehypeStringify from 'rehype-stringify';
-import { oxocarbon } from '../shiki';
+import Markdown from 'react-markdown';
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (data) {
@@ -44,20 +39,9 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export const loader = async ({ params, context }: LoaderFunctionArgs) => {
   const { rkey } = params;
   try {
-    const post = await getPost(context, rkey!, true);
-
-    const parsedMd = await unified()
-      .use(remarkParse)
-      .use(remarkRehype)
-      .use(rehypeShiki, {
-        theme: oxocarbon,
-      })
-      .use(rehypeStringify)
-      .process(post.content!);
-
-    return json({ post, md: parsedMd.value });
+    const post = await getPost(context, rkey!);
+    return json({ post });
   } catch(e) {
-    console.log(e);
     throw new Response(null, {
       status: 404,
       statusText: 'Post not found.',
@@ -66,9 +50,8 @@ export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 };
 
 export default () => {
-  const { post, md } = useLoaderData<{
+  const { post } = useLoaderData<{
     post: WhtwndBlogEntryView;
-    md: string;
   }>();
 
   return (
@@ -80,7 +63,9 @@ export default () => {
         </span>
       </header>
 
-      <div className="prose max-w-5xl py-5" dangerouslySetInnerHTML={{ __html: md }} />
+      <Markdown className="prose max-w-5xl py-5">
+        {post.content}
+      </Markdown>
     </>
   );
 }
