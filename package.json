@@ -13,7 +13,7 @@
     "typegen": "wrangler types"
   },
   "dependencies": {
-    "@atproto/api": "^0.13.14",
+    "@atproto/api": "^0.13.16",
     "@cloudflare/kv-asset-handler": "^0.3.4",
     "@fontsource/geist-mono": "^5.1.0",
     "@remix-run/cloudflare": "^2.13.1",
