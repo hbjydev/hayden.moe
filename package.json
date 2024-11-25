@@ -17,7 +17,7 @@
     "@cloudflare/kv-asset-handler": "^0.3.4",
     "@fontsource/geist-mono": "^5.1.0",
     "@remix-run/cloudflare": "^2.13.1",
-    "@remix-run/cloudflare-pages": "^2.13.1",
+    "@remix-run/cloudflare-pages": "^2.15.0",
     "@remix-run/react": "^2.13.1",
     "@remix-run/server-runtime": "^2.13.1",
     "feed": "^4.2.2",
