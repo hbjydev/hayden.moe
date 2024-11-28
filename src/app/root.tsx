@@ -59,18 +59,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <ScrollRestoration />
         <Scripts />
-
-        {process.env.NODE_ENV == "production" ? (<>
-          <script dangerouslySetInnerHTML={{ __html: `
-            (function () {
-              window.counterscale = {
-                q: [["set", "siteId", "hayden-moe"], ["trackPageview"]],
-              };
-            })
-          `}}>
-          </script>
-          <script defer src="https://anal.hayden.moe/tracker.js"></script>
-        </>) : <></>}
       </body>
     </html>
   );
