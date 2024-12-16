@@ -25,6 +25,12 @@
   }
 }
 
+@layer utilities {
+  .rendering-pixelated {
+    image-rendering: pixelated;
+  }
+}
+
 hr {
   border-color: var(--base02);
 }

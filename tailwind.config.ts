@@ -15,12 +15,14 @@ export default {
       fontFamily: {
         mono: ["Geist Mono", "Courier New", ...defaultTheme.fontFamily.sans],
       },
+
       colors: {
         black: "var(--base00)",
         white: "var(--base05)",
         gray: "var(--base02)",
         muted: "var(--base02)",
         pink: "var(--base0A)",
+        blue: "var(--base0F)",
       },
 
       animation: {
