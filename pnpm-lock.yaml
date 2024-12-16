@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@atproto/api':
-        specifier: ^0.13.14
-        version: 0.13.14
+        specifier: ^0.13.20
+        version: 0.13.20
       '@cloudflare/kv-asset-handler':
         specifier: ^0.3.4
         version: 0.3.4
@@ -116,8 +116,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@atproto/api@0.13.14':
-    resolution: {integrity: sha512-CG5UpjI1WwSasSJTGadmr07EwWvl5JV658YZHcwIIg+Psk5sDloQOUJckuo1MP6wke1z6p/BUoPL4lxAATzMzA==}
+  '@atproto/api@0.13.20':
+    resolution: {integrity: sha512-z/+CvG6BEttRHf856tKSe1AeUQNfrobRJldaHAthGmFk7O3wLZQyfcI9DUmBJQ9+4wAt0dZwvKWVGLZOV9eLHA==}
 
   '@atproto/common-web@0.3.1':
     resolution: {integrity: sha512-N7wiTnus5vAr+lT//0y8m/FaHHLJ9LpGuEwkwDAeV3LCiPif4m/FS8x/QOYrx1PdZQwKso95RAPzCGWQBH5j6Q==}
@@ -4052,7 +4052,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@atproto/api@0.13.14':
+  '@atproto/api@0.13.20':
     dependencies:
       '@atproto/common-web': 0.3.1
       '@atproto/lexicon': 0.4.4
