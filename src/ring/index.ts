@@ -7,17 +7,22 @@ export type Fren = {
 export const frens: Fren[] = [
   {
     name: 'Sapphic Angels',
-    img: 'sapphic.png',
+    img: 'https://sapphic.moe/buttons/friends/sapphic/image.png',
     url: 'https://sapphic.moe',
   },
   {
     name: 'Alyxia',
-    img: 'alyxia.png',
+    img: 'https://alyxia.dev/static/img/88x31/self.png',
     url: 'https://alyxia.dev',
   },
   {
     name: 'Aria',
-    img: 'aria.gif',
+    img: 'https://aria.coffee/static/img/buttons/aria.gif',
     url: 'https://aria.coffee',
+  },
+  {
+    name: 'notnite',
+    img: 'https://notnite.com/buttons/notnite.png',
+    url: 'https://notnite.com',
   }
 ];

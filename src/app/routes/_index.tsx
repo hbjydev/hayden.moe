@@ -46,7 +46,7 @@ export default () => {
           {frens.map((fren, idx) => (
             <a href={fren.url} key={idx}>
               <img
-                src={`/88x31/${fren.img}`}
+                src={fren.img}
                 className="rendering-pixelated"
                 width={88}
                 height={31}
