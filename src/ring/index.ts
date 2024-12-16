@@ -24,5 +24,10 @@ export const frens: Fren[] = [
     name: 'notnite',
     img: 'https://notnite.com/buttons/notnite.png',
     url: 'https://notnite.com',
+  },
+  {
+    name: '0x5066',
+    img: 'https://erisdump.neocities.org/buttons/88x31.gif',
+    url: 'https://erisdump.neocities.org',
   }
 ];
