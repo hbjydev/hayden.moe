@@ -29,5 +29,10 @@ export const frens: Fren[] = [
     name: '0x5066',
     img: 'https://erisdump.neocities.org/buttons/88x31.gif',
     url: 'https://erisdump.neocities.org',
+  },
+  {
+    name: 'Buh',
+    img: 'https://buh.moe/resources/buttons/88x31.gif',
+    url: 'https://buh.moe'
   }
 ];
