@@ -10,6 +10,7 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction, LoaderFunction } from "@remix-run/cloudflare";
 
+import "@fontsource/geist-mono";
 import "./tailwind.css";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
@@ -45,7 +46,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-black text-white font-mono tracking-normal leading-normal flex flex-col min-h-screen selection:bg-[var(--base0E)] selection:text-black">
+      <body className="antialiased bg-black text-white font-mono tracking-normal leading-normal flex flex-col min-h-screen selection:bg-[var(--base0E)] selection:text-black">
         <div className="flex flex-col flex-grow">
           <Header />
 
