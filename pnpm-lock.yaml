@@ -27,8 +27,8 @@ importers:
         specifier: ^2.15.1
         version: 2.15.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
       '@remix-run/server-runtime':
-        specifier: ^2.13.1
-        version: 2.13.1(typescript@5.6.3)
+        specifier: ^2.15.1
+        version: 2.15.1(typescript@5.6.3)
       feed:
         specifier: ^4.2.2
         version: 4.2.2
