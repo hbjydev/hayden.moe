@@ -40,7 +40,7 @@ export default () => {
         </p>
       </div>
 
-      <div className="mt-6 max-w-5xl">
+      <div className="mt-6 max-w-5xl flex flex-col gap-2">
         <p className="text-[var(--base0F)] underline">Webring</p>
         <div className="flex items-center gap-4">
           {frens.map((fren, idx) => (
@@ -54,6 +54,16 @@ export default () => {
               />
             </a>
           ))}
+        </div>
+        <div className="p-2 bg-[var(--base01)] block">
+          <p>Wanna add me to yours? Here's my badge!</p>
+          <img
+            src={`/88x31/hayden.png`}
+            width={88}
+            height={31}
+            alt="Hayden"
+            style={{ imageRendering: 'pixelated' }}
+          />
         </div>
       </div>
     </>
