@@ -1,5 +1,4 @@
 import {
-  json,
   Links,
   Meta,
   Outlet,
@@ -7,8 +6,8 @@ import {
   ScrollRestoration,
   useLoaderData,
   useLocation,
-} from "@remix-run/react";
-import type { LinksFunction, LoaderFunction } from "@remix-run/cloudflare";
+} from "react-router";
+import type { LinksFunction, LoaderFunction } from "react-router";
 
 import "@fontsource/geist-mono";
 import "./tailwind.css";
@@ -16,9 +15,9 @@ import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 
 export const loader: LoaderFunction = ({ request }) => {
-  return json({
+  return {
     origin: new URL(request.url).origin,
-  });
+  };
 }
 
 export const links: LinksFunction = () => [
@@ -33,7 +32,7 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const props = useLoaderData<{ origin: string; }>();
+  const props = useLoaderData<{ origin: string }>();
   const { pathname } = useLocation()
   const href = props ? props.origin + pathname : '';
 

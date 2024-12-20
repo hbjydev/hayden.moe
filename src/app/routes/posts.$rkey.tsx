@@ -1,5 +1,5 @@
-import { json, LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare';
-import { useLoaderData } from '@remix-run/react';
+import { LoaderFunctionArgs, MetaFunction } from 'react-router';
+import { useLoaderData } from 'react-router';
 import { getPost } from 'src/atproto/getPost';
 import { WhtwndBlogEntryView } from 'src/types';
 import { FormattedDate } from '../components/formatted-date';
@@ -40,7 +40,7 @@ export const loader = async ({ params, context }: LoaderFunctionArgs) => {
   const { rkey } = params;
   try {
     const post = await getPost(context, rkey!);
-    return json({ post });
+    return { post };
   } catch(e) {
     throw new Response(null, {
       status: 404,
@@ -50,9 +50,7 @@ export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 };
 
 export default () => {
-  const { post } = useLoaderData<{
-    post: WhtwndBlogEntryView;
-  }>();
+  const { post } = useLoaderData<typeof loader>();
 
   return (
     <>

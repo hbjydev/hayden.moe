@@ -1,7 +1,7 @@
 import { WhtwndBlogEntryRecord, WhtwndBlogEntryView } from "src/types";
 import { atpAgent } from "./agent";
 import { whtwndBlogEntryRecordToView } from "./dataToView";
-import { AppLoadContext } from "@remix-run/cloudflare";
+import { AppLoadContext } from "react-router";
 import { getCachedPosts, setCachedPost, setCachedPosts } from "src/kv";
 
 export const getPosts = async (ctx: AppLoadContext, cursor: string | undefined, skipCache?: boolean) => {

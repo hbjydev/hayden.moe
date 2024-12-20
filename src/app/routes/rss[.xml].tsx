@@ -1,4 +1,4 @@
-import { LoaderFunction } from "@remix-run/cloudflare";
+import { LoaderFunction } from "react-router";
 import { Feed } from "feed";
 import { getPosts } from "src/atproto/getPosts";
 

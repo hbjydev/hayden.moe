@@ -1,7 +1,6 @@
-import { json, LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare';
-import { useLoaderData } from '@remix-run/react';
+import { LoaderFunctionArgs, MetaFunction } from 'react-router';
+import { useLoaderData } from 'react-router';
 import { getPosts } from 'src/atproto/getPosts';
-import { WhtwndBlogEntryView } from 'src/types';
 import { FormattedDate } from '../components/formatted-date';
 import Markdown from 'react-markdown';
 
@@ -21,13 +20,11 @@ export const loader = async ({ context }: LoaderFunctionArgs) => {
     return p;
   });
 
-  return json({ posts: postsShortened });
+  return { posts: postsShortened };
 };
 
 export default () => {
-  const { posts } = useLoaderData<{
-    posts: WhtwndBlogEntryView[];
-  }>();
+  const { posts } = useLoaderData<typeof loader>();
 
   return (
     <div className="-mx-5 flex flex-col">

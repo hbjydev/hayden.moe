@@ -1,4 +1,4 @@
-import { AppLoadContext } from "@remix-run/cloudflare";
+import { AppLoadContext } from "react-router";
 import { WhtwndBlogEntryView } from "src/types";
 
 export const getCachedPosts = async (context: AppLoadContext) => {
