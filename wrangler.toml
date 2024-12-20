@@ -1,5 +1,6 @@
 name = "haydenuwu-blog"
-compatibility_date = "2023-04-20"
+compatibility_flags = [ "nodejs_compat" ]
+compatibility_date = "2024-09-23"
 pages_build_output_dir = "./build/client"
 
 [[kv_namespaces]]
