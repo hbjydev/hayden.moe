@@ -97,8 +97,8 @@ importers:
         specifier: ^5.4.11
         version: 5.4.11(@types/node@22.10.2)
       vite-tsconfig-paths:
-        specifier: ^5.1.0
-        version: 5.1.0(typescript@5.6.3)(vite@5.4.11(@types/node@22.10.2))
+        specifier: ^5.1.4
+        version: 5.1.4(typescript@5.6.3)(vite@5.4.11(@types/node@22.10.2))
       wrangler:
         specifier: ^3.84.1
         version: 3.84.1(@cloudflare/workers-types@4.20241022.0)
@@ -3091,8 +3091,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-tsconfig-paths@5.1.0:
-    resolution: {integrity: sha512-Y1PLGHCJfAq1Zf4YIGEsmuU/NCX1epoZx9zwSr32Gjn3aalwQHRKr5aUmbo6r0JHeHkqmWpmDg7WOynhYXw1og==}
+  vite-tsconfig-paths@5.1.4:
+    resolution: {integrity: sha512-cYj0LRuLV2c2sMqhqhGpaO3LretdtMn/BVX4cPLanIZuwwrkVl+lK84E/miEXkCHWXuq65rhNN4rXsBcOB3S4w==}
     peerDependencies:
       vite: '*'
     peerDependenciesMeta:
@@ -6587,7 +6587,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-tsconfig-paths@5.1.0(typescript@5.6.3)(vite@5.4.11(@types/node@22.10.2)):
+  vite-tsconfig-paths@5.1.4(typescript@5.6.3)(vite@5.4.11(@types/node@22.10.2)):
     dependencies:
       debug: 4.4.0
       globrex: 0.1.2
