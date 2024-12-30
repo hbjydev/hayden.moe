@@ -1,5 +1,5 @@
 export const Header = () => (
-  <nav className="border-b border-muted justify-left divide-x divide-muted [&>a]:py-1 [&>a]:px-4 fixed w-full bg-black flex items-center">
+  <nav className="h-10 border-b border-muted justify-left divide-x divide-muted [&>a]:py-1 [&>a]:px-4 fixed w-full bg-black flex items-center">
     <a href="/" className="flex items-center gap-2 text-[var(--base0A)]">
       <span>hayden@web ~</span>
       <div className="w-[10px] h-[21px] animate-blink bg-pink"></div>

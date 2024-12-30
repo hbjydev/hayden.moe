@@ -28,8 +28,8 @@ export default () => {
 
   return (
     <div className="-mx-5 flex flex-col">
-      <header className="flex flex-col border-b border-muted pb-5 px-5">
-        <h1 className="font-bold">Posts</h1>
+      <header className="flex flex-col px-5">
+        <h1 className="font-bold before-hash-1">Posts</h1>
         <p className="text-[var(--base03)]">
           Showing {posts.length} posts of {posts.length}.
         </p>

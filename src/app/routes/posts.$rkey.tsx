@@ -1,7 +1,6 @@
 import { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { useLoaderData } from 'react-router';
 import { getPost } from 'src/atproto/getPost';
-import { WhtwndBlogEntryView } from 'src/types';
 import { FormattedDate } from '../components/formatted-date';
 import Markdown from 'react-markdown';
 
@@ -54,14 +53,14 @@ export default () => {
 
   return (
     <>
-      <header className="-mx-5 px-5 border-b border-muted pb-5">
-        <h1 className="font-bold">{post.title}</h1>
+      <header className="-mx-5 px-5">
+        <h1 className="font-bold before-hash-1">{post.title}</h1>
         <span className="text-[var(--base03)]">
           <FormattedDate date={new Date(Date.parse(post.createdAt))} />
         </span>
       </header>
 
-      <Markdown className="prose max-w-5xl py-5">
+      <Markdown className="prose max-w-5xl pb-5">
         {post.content}
       </Markdown>
     </>

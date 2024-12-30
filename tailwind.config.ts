@@ -18,11 +18,30 @@ export default {
 
       colors: {
         black: "var(--base00)",
-        white: "var(--base05)",
+        white: "var(--base04)",
         gray: "var(--base02)",
         muted: "var(--base02)",
         pink: "var(--base0A)",
         blue: "var(--base0F)",
+
+        base: {
+          '00': 'var(--base00)',
+          '01': 'var(--base01)',
+          '02': 'var(--base02)',
+          '03': 'var(--base03)',
+          '04': 'var(--base04)',
+          '05': 'var(--base05)',
+          '06': 'var(--base06)',
+          '07': 'var(--base07)',
+          '08': 'var(--base08)',
+          '09': 'var(--base09)',
+          '0A': 'var(--base0A)',
+          '0B': 'var(--base0B)',
+          '0C': 'var(--base0C)',
+          '0D': 'var(--base0D)',
+          '0E': 'var(--base0E)',
+          '0F': 'var(--base0F)',
+        },
       },
 
       animation: {

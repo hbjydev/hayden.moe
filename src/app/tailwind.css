@@ -29,6 +29,21 @@
   .rendering-pixelated {
     image-rendering: pixelated;
   }
+
+  .before-hash-1::before {
+    content: "# " / "";
+    color: var(--base03);
+  }
+
+  .before-hash-2::before {
+    content: "## " / "";
+    color: var(--base03);
+  }
+
+  .before-hash-3::before {
+    content: "### " / "";
+    color: var(--base03);
+  }
 }
 
 hr {

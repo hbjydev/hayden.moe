@@ -49,7 +49,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col flex-grow">
           <Header />
 
-          <main className="mt-20 flex flex-col gap-3 px-5 flex-grow">
+          <main className="mt-10 flex flex-col gap-3 px-5 pt-5 flex-grow">
             {children}
           </main>
 
