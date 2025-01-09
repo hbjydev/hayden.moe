@@ -66,6 +66,29 @@ export default {
 
             h1: {
               color: theme('colors.white'),
+              fontSize: '1em',
+              '&::before': {
+                content: '"# " / "" !important',
+                color: 'var(--base03)',
+              },
+            },
+
+            h2: {
+              color: theme('colors.white'),
+              fontSize: '1em',
+              '&::before': {
+                content: '"## " / "" !important',
+                color: 'var(--base03)',
+              },
+            },
+
+            h3: {
+              color: theme('colors.white'),
+              fontSize: '1em',
+              '&::before': {
+                content: '"### " / "" !important',
+                color: 'var(--base03)',
+              },
             },
 
             hr: {
