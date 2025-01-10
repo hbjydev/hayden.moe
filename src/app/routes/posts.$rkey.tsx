@@ -9,9 +9,6 @@ import remarkRehype from 'remark-rehype'
 import { unified } from 'unified';
 import { loadWasm } from 'shiki/engine/oniguruma';
 
-// @ts-ignore This is valid but TS doesn't know about .wasm types
-await loadWasm(import('shiki/onig.wasm'));
-
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (data) {
     const desc = data.post.content?.slice(0, 100).trimEnd();
@@ -46,6 +43,9 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export const loader = async ({ params, context }: LoaderFunctionArgs) => {
   const { rkey } = params;
   try {
+    // @ts-ignore This is valid but TS doesn't know about .wasm types
+    await loadWasm(import('shiki/onig.wasm?init'));
+
     const post = await getPost(context, rkey!);
     const md = await unified()
       .use(remarkParse)
@@ -55,8 +55,10 @@ export const loader = async ({ params, context }: LoaderFunctionArgs) => {
       })
       .use(rehypeStringify)
       .process(post.content);
+
     return { post, md };
   } catch(e) {
+    console.error(e);
     throw new Response(null, {
       status: 404,
       statusText: 'Post not found.',
