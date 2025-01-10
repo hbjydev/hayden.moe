@@ -2,7 +2,11 @@ import { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { useLoaderData } from 'react-router';
 import { getPost } from 'src/atproto/getPost';
 import { FormattedDate } from '../components/formatted-date';
-import Markdown from 'react-markdown';
+import rehypeShiki from '@shikijs/rehype'
+import rehypeStringify from 'rehype-stringify'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import { unified } from 'unified';
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (data) {
@@ -39,7 +43,15 @@ export const loader = async ({ params, context }: LoaderFunctionArgs) => {
   const { rkey } = params;
   try {
     const post = await getPost(context, rkey!);
-    return { post };
+    const md = await unified()
+      .use(remarkParse)
+      .use(remarkRehype)
+      .use(rehypeShiki, {
+        theme: 'vitesse-light',
+      })
+      .use(rehypeStringify)
+      .process(post.content);
+    return { post, md };
   } catch(e) {
     throw new Response(null, {
       status: 404,
@@ -49,7 +61,7 @@ export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 };
 
 export default () => {
-  const { post } = useLoaderData<typeof loader>();
+  const { post, md } = useLoaderData<typeof loader>();
 
   return (
     <>
@@ -60,9 +72,7 @@ export default () => {
         </span>
       </header>
 
-      <Markdown className="prose max-w-5xl pb-5">
-        {post.content}
-      </Markdown>
+      <div className="prose max-w-5xl pb-5" dangerouslySetInnerHTML={{ __html: md }} />
     </>
   );
 }
