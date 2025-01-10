@@ -28,11 +28,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
-    environment:
-      name: prod
-      url: https://hayden.moe
     needs: [build]
-    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      deployments: write
     steps:
       - uses: actions/checkout@v4
 
@@ -53,3 +52,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: pages deploy ./build/client
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
