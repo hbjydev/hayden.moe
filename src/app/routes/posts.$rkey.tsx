@@ -7,7 +7,6 @@ import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified';
-import { loadWasm } from 'shiki/engine/oniguruma';
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (data) {
@@ -43,9 +42,6 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export const loader = async ({ params, context }: LoaderFunctionArgs) => {
   const { rkey } = params;
   try {
-    // @ts-ignore This is valid but TS doesn't know about .wasm types
-    await loadWasm(import('shiki/onig.wasm?init'));
-
     const post = await getPost(context, rkey!);
     const md = await unified()
       .use(remarkParse)
