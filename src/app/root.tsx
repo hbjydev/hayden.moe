@@ -45,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="antialiased bg-black text-white font-mono tracking-normal leading-normal flex flex-col min-h-screen selection:bg-[var(--base0E)] selection:text-black">
+      <body className="antialiased bg-black text-white font-mono tracking-normal leading-normal flex flex-col min-h-screen selection:bg-base0E selection:text-black">
         <div className="flex flex-col grow">
           <Header />
 

@@ -1,17 +1,89 @@
 @import '@fontsource/geist-mono' layer(base);
 
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
-@config '../../tailwind.config.ts';
+@theme {
+  --color-base00: #161616;
+  --color-base01: #262626;
+  --color-base02: #393939;
+  --color-base03: #525252;
+  --color-base04: #dde1e6;
+  --color-base05: #f2f4f8;
+  --color-base06: #ffffff;
+  --color-base07: #08bdba;
+  --color-base08: #3ddbd9;
+  --color-base09: #78a9ff;
+  --color-base0A: #ee5396;
+  --color-base0B: #33b1ff;
+  --color-base0C: #ff7eb6;
+  --color-base0D: #42be65;
+  --color-base0E: #be95ff;
+  --color-base0F: #82cfff;
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+  --color-black: var(--color-base00);
+  --color-white: var(--color-base04);
+  --color-gray: var(--color-base02);
+  --color-muted: var(--color-base02);
+  --color-pink: var(--color-base0A);
+  --color-blue: var(--color-base0F);
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+  --font-mono: 'Geist Mono', monospace;
+
+  --tracking-normal: -0.32px;
+  --leading-normal: 180%;
+
+  --animate-blink: blink 1.45s infinite step-start;
+
+  @keyframes blink {
+    0%, 25%, 100% { opacity: 1 }
+    50%, 75% { opacity: 0 }
+  }
+}
+
+@utility prose {
+  color: var(--color-white) !important;
+
+  a { color: var(--color-pink) }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-white);
+    font-size: 1em;
+    &::before { color: var(--color-base03); }
+  }
+
+  h1::before { content: '# ' / '' !important; }
+  h2::before { content: '## ' / '' !important; }
+  h3::before { content: '### ' / '' !important; }
+  h4::before { content: '#### ' / '' !important; }
+  h5::before { content: '##### ' / '' !important; }
+  h6::before { content: '###### ' / '' !important; }
+
+  hr {
+    border-color: var(--color-muted);
+    width: calc(100vw-1em);
+    margin: 2em -1.25em;
+  }
+
+  blockquote {
+    border-inline-start-color: var(--color-base03);
+    font-style: normal
+    & p { color: var(--color-base04) }
+  }
+
+  pre {
+    background-color: var(--color-base00);
+    border: 1px solid var(--color-base02);
+    border-radius: 0;
+  }
+
+  code {
+    color: var(--color-base0E);
+    &::before { content: "" !important };
+    &::after { content: "" !important };
+  }
+}
+
 @layer base {
   *,
   ::after,
@@ -29,14 +101,14 @@
 @utility before-hash-1 {
   &::before {
     content: '# ' / '';
-    color: var(--base03);
+    color: var(--color-base03);
   }
 }
 
 @utility before-hash-2 {
   &::before {
     content: '## ' / '';
-    color: var(--base03);
+    color: var(--color-base03);
   }
 }
 
@@ -47,32 +119,11 @@
   }
 }
 
-@layer base {
-  :root {
-    --base00: #161616;
-    --base01: #262626;
-    --base02: #393939;
-    --base03: #525252;
-    --base04: #dde1e6;
-    --base05: #f2f4f8;
-    --base06: #ffffff;
-    --base07: #08bdba;
-    --base08: #3ddbd9;
-    --base09: #78a9ff;
-    --base0A: #ee5396;
-    --base0B: #33b1ff;
-    --base0C: #ff7eb6;
-    --base0D: #42be65;
-    --base0E: #be95ff;
-    --base0F: #82cfff;
-  }
-}
-
 hr {
-  border-color: var(--base02);
+  border-color: var(--color-base02);
 }
 
 pre:has(code) {
-  background-color: var(--base00) !important;
+  background-color: var(--color-base00) !important;
   border-radius: 0;
 }

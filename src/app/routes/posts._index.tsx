@@ -30,7 +30,7 @@ export default () => {
     <div className="-mx-5 flex flex-col">
       <header className="flex flex-col px-5">
         <h1 className="font-bold before-hash-1">Posts</h1>
-        <p className="text-[var(--base03)]">
+        <p className="text-base03">
           Showing {posts.length} posts of {posts.length}.
         </p>
       </header>
@@ -43,7 +43,7 @@ export default () => {
                 <h2 className="text-pink font-bold">
                   <a href={`/posts/${post.rkey}/`}>{post.title}</a>
                 </h2>
-                <p className="text-[var(--base03)]">
+                <p className="text-base03">
                   <span className="date">
                     <FormattedDate date={new Date(Date.parse(post.createdAt))} />
                   </span>
