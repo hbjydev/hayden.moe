@@ -9,6 +9,6 @@ export const Header = () => (
     <a className="hover:text-[var(--base0E)]" href="https://bsky.app/profile/hayden.moe">bluesky</a>
     <a className="hover:text-[var(--base0E)]" href="https://twitch.tv/hayden_dev">twitch</a>
     <a className="hover:text-[var(--base0E)]" href="https://github.com/hbjydev">github</a>
-    <a className="hover:text-[var(--base0E)] !border-r border-muted" href="/rss.xml">rss</a>
+    <a className="hover:text-[var(--base0E)] border-r! border-muted" href="/rss.xml">rss</a>
   </nav>
 );
