@@ -55,7 +55,7 @@ export default () => {
             </a>
           ))}
         </div>
-        <div className="p-2 bg-[var(--base01)] block">
+        <div className="p-2 bg-base01 block">
           <p>Wanna add me to yours? Here's my badge!</p>
           <img
             src={`/88x31/hayden.png`}

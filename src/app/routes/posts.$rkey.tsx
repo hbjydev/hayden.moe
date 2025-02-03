@@ -55,7 +55,7 @@ export default () => {
     <>
       <header className="-mx-5 px-5">
         <h1 className="font-bold before-hash-1">{post.title}</h1>
-        <span className="text-[var(--base03)]">
+        <span className="text-base03">
           <FormattedDate date={new Date(Date.parse(post.createdAt))} />
         </span>
       </header>
