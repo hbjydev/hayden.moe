@@ -37,7 +37,7 @@ export const frens: Fren[] = [
   },
   {
     name: 'Prefetcher',
-    img: 'https://ata.moe/88x31.png',
-    url: 'https://ata.moe',
+    img: 'https://nanoshinono.me/prefetcher.gif',
+    url: 'https://nanoshinono.me/',
   }
 ];
