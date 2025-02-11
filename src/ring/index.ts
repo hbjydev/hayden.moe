@@ -7,7 +7,7 @@ export type Fren = {
 export const frens: Fren[] = [
   {
     name: 'Sapphic Angels',
-    img: 'https://sapphic.moe/buttons/friends/sapphic/image.png',
+    img: 'https://sapphic.moe/buttons/friends/sapphic.png',
     url: 'https://sapphic.moe',
   },
   {
