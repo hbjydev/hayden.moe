@@ -33,6 +33,11 @@ export const frens: Fren[] = [
   {
     name: 'Buh',
     img: 'https://buh.moe/resources/buttons/88x31.gif',
-    url: 'https://buh.moe'
+    url: 'https://buh.moe',
+  },
+  {
+    name: 'Prefetcher',
+    img: 'https://ata.moe/88x31.png',
+    url: 'https://ata.moe',
   }
 ];
