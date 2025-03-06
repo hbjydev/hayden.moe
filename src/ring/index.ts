@@ -21,6 +21,11 @@ export const frens: Fren[] = [
     url: 'https://aria.coffee',
   },
   {
+    name: 'LeNooby',
+    img: 'https://lenooby09.tech/88x31/88x31.png',
+    url: 'https://lenooby09.tech',
+  },
+  {
     name: 'notnite',
     img: 'https://notnite.com/buttons/notnite.png',
     url: 'https://notnite.com',
