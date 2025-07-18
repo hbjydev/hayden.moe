@@ -3,6 +3,14 @@ import Shell from '../layouts/shell.astro';
 ---
 
 <Shell>
+  <div class="flex flex-col lg:flex-row justify-start items-center gap-6 max-w-2xl mx-auto w-full mb-4">
+    <img src="https://github.com/hbjydev.png" class="size-32 rounded-full" />
+    <div class="flex flex-col items-start justify-center gap-3">
+      <h1 class="font-bold text-2xl">Hi, I'm Hayden.</h1>
+      <h3 class="text-xl text-pink">Platform Engineer</h3>
+    </div>
+  </div>
+
   <div class="prose max-w-2xl mx-auto">
     <p>
       I love working with all things DevOps, from automation and software
@@ -32,7 +40,9 @@ import Shell from '../layouts/shell.astro';
     </p>
   </div>
 
-  <div class="max-w-sm w-full mx-auto grid md:grid-cols-2 gap-4">
+  <hr />
+
+  <div class="max-w-sm w-full mx-auto grid sm:grid-cols-2 gap-4">
     <div class="flex flex-col gap-2">
       <span class="font-bold text-lg">On the web</span>
       <ul class="list-disc list-inside">
