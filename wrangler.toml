@@ -4,6 +4,14 @@ main = "./dist/_worker.js/index.js"
 compatibility_date = "2025-07-18"
 compatibility_flags = [ "nodejs_compat" ]
 
+[[routes]]
+pattern = "hayden.moe"
+custom_domain = true
+
+[[routes]]
+pattern = "hbjy.dev"
+custom_domain = true
+
 [vars]
 ATP_IDENTIFIER = "hayden.moe"
 ATP_SERVICE = "https://pds.hayden.moe/"
