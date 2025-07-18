@@ -61,11 +61,12 @@
 
   hr {
     border-color: var(--color-muted);
-    width: calc(100vw-1em);
-    margin: 2em -1.25em;
+    width: 100%;
+    margin: 2em 0;
   }
 
   blockquote {
+    color: var(--color-blue);
     border-inline-start-color: var(--color-base03);
     font-style: normal
     & p { color: var(--color-base04) }

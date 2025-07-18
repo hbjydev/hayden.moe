@@ -53,16 +53,27 @@ export default () => {
 
   return (
     <>
-      <header className="-mx-5 px-5">
+      <header className="max-w-2xl mx-auto w-full">
         <h1 className="font-bold before-hash-1">{post.title}</h1>
         <span className="text-base03">
           <FormattedDate date={new Date(Date.parse(post.createdAt))} />
         </span>
       </header>
 
-      <Markdown className="prose max-w-5xl pb-5">
+      <hr />
+
+      <Markdown className="prose max-w-2xl mx-auto pb-5">
         {post.content}
       </Markdown>
+
+      <hr />
+
+      <p className="max-w-2xl mx-auto pb-5 prose">
+        Thanks for reading along, I hope you enjoyed this post.
+        If you did, maybe consider following me on <a href="https://bsky.app/profile/hayden.moe">Bluesky</a>,
+        and if you're feeling generous, maybe consider <a href="https://ko-fi.com/haydenuwu">buying me a coffee</a>.
+        I'm trying to write more this year, so I'll see you in the next post. 👋
+      </p>
     </>
   );
 }
