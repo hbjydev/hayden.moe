@@ -1,0 +1,40 @@
+---
+export const prerender = false;
+
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
+
+import { getPost } from '~/atproto/getPost';
+import Shell from '~/layouts/shell.astro';
+import FormattedDate from '~/components/formatted-date.astro';
+import { loadWasm } from 'shiki';
+
+const rkey = Astro.params.rkey;
+
+// @ts-ignore
+loadWasm(await import('shiki/onig.wasm'));
+
+const markdownProcessor = await createMarkdownProcessor();
+const post = await getPost(Astro.locals, rkey!);
+const content = await markdownProcessor.render(post.content)
+---
+<Shell>
+  <header class="max-w-2xl mx-auto w-full">
+    <h1 class="font-bold before-hash-1">{post.title}</h1>
+    <span class="text-base03">
+      <FormattedDate date={new Date(Date.parse(post.createdAt))} />
+    </span>
+  </header>
+
+  <hr />
+
+  <div class="prose max-w-2xl mx-auto pb-5" set:html={content.code} />
+
+  <hr />
+
+  <p class="max-w-2xl mx-auto pb-5 prose">
+    Thanks for reading along, I hope you enjoyed this post.
+    If you did, maybe consider following me on <a href="https://bsky.app/profile/hayden.moe">Bluesky</a>,
+    and if you're feeling generous, maybe consider <a href="https://ko-fi.com/haydenuwu">buying me a coffee</a>.
+    I'm trying to write more this year, so I'll see you in the next post. 👋
+  </p>
+</Shell>

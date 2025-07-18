@@ -80,8 +80,8 @@
 
   code {
     color: var(--color-base0E);
-    &::before { content: "" !important };
-    &::after { content: "" !important };
+    &::before { content: "" !important }
+    &::after { content: "" !important }
   }
 }
 

@@ -4,38 +4,20 @@ name: Build & Deploy
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Build
-    steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
-      - run: bun install
-      - run: bun run build
-      - uses: actions/upload-artifact@v4
-        with:
-          name: build
-          path: build
-
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
-    needs: [build]
     permissions:
       contents: read
       deployments: write
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - uses: actions/download-artifact@v4
-        with:
-          name: build
-          path: build
       - run: bun install
       - run: bun run build
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./build/client
+          command: deploy
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

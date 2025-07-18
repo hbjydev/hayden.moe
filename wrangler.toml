@@ -1,12 +1,28 @@
 name = "haydenuwu-blog"
-compatibility_flags = [ "nodejs_compat" ]
-compatibility_date = "2024-09-23"
-pages_build_output_dir = "./build/client"
+main = "./dist/_worker.js/index.js"
 
-[[kv_namespaces]]
-binding = "CACHE"
-id = "d7e88adf8eb44f7b9e0544b43bfb27b4"
+compatibility_date = "2025-07-18"
+compatibility_flags = [ "nodejs_compat" ]
+
+[[routes]]
+pattern = "hayden.moe"
+custom_domain = true
+
+[[routes]]
+pattern = "hbjy.dev"
+custom_domain = true
 
 [vars]
 ATP_IDENTIFIER = "hayden.moe"
 ATP_SERVICE = "https://pds.hayden.moe/"
+
+[observability]
+enabled = true
+
+[assets]
+binding = "ASSETS"
+directory = "./dist"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "d7e88adf8eb44f7b9e0544b43bfb27b4"

@@ -1,0 +1,38 @@
+---
+import BaseHead from '../components/base-head.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+
+import '@fontsource/geist-mono';
+
+import '../style.css';
+
+interface Props {
+  title?: string;
+  children: any;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ?? 'hayden@web ~'}</title>
+    <BaseHead />
+  </head>
+  <body class="antialiased bg-black text-white font-mono tracking-normal leading-normal flex flex-col min-h-screen selection:bg-base0E selection:text-black">
+    <div class="flex flex-col grow">
+      <Header />
+
+      <main class="mt-10 flex flex-col gap-3 px-5 pt-5 grow">
+        <slot />
+      </main>
+
+      <footer class="page__footer">
+        <Footer />
+      </footer>
+    </div>
+  </body>
+</html>

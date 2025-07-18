@@ -1,4 +1,7 @@
-declare module "__STATIC_CONTENT_MANIFEST" {
-  const manifest: string;
-  export default manifest;
+/// <reference types="astro/client" />
+
+// use a default runtime configuration (advanced mode).
+type Runtime = import("@astrojs/cloudflare").Runtime<Env>;
+declare namespace App {
+  interface Locals extends Runtime {}
 }

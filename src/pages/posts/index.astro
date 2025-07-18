@@ -1,0 +1,50 @@
+---
+export const prerender = false;
+
+import { getPosts } from '~/atproto/getPosts';
+import Shell from '~/layouts/shell.astro';
+import FormattedDate from '~/components/formatted-date.astro';
+
+const posts = await getPosts(Astro.locals, '', false);
+const postsFiltered = posts.filter(p => !p.content?.startsWith('NOT_LIVE'));
+
+const postsShortened = postsFiltered.map(p => {
+  if (p.content?.length! > 200) {
+    p.content = p.content?.slice(0, 200).trimEnd() + '...';
+  }
+  return p;
+});
+---
+<Shell title="hayden@web ~/posts">
+  <div class="-mx-5 flex flex-col">
+    <header class="flex flex-col px-5">
+      <h1 class="font-bold before-hash-1">Posts</h1>
+      <p class="text-base03">
+        Showing {posts.length} posts of {posts.length}.
+      </p>
+    </header>
+
+    <div>
+      {postsShortened.map((post) => (
+        <div class="px-5 py-4 border-b border-muted">
+          <article>
+            <header>
+              <h2 class="text-pink font-bold">
+                <a href={`/posts/${post.rkey}/`}>{post.title}</a>
+              </h2>
+              <p class="text-base03">
+                <span class="date">
+                  <FormattedDate date={new Date(Date.parse(post.createdAt))} />
+                </span>
+              </p>
+            </header>
+          </article>
+
+          <section class="post__summary prose max-w-6xl">
+              { post.content }
+          </section>
+        </div>
+      ))}
+    </div>
+  </div>
+</Shell>

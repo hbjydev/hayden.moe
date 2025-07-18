@@ -1,16 +1,15 @@
-import { WhtwndBlogEntryRecord, WhtwndBlogEntryView } from "src/types";
+import type { WhtwndBlogEntryRecord, WhtwndBlogEntryView } from "src/types";
 import { atpAgent } from "./agent";
 import { whtwndBlogEntryRecordToView } from "./dataToView";
-import { AppLoadContext } from "react-router";
 import { getCachedPost, setCachedPost } from "src/kv";
 
-export const getPost = async (ctx: AppLoadContext, rkey: string, skipCache?: boolean) => {
+export const getPost = async (ctx: App.Locals, rkey: string, skipCache?: boolean) => {
   const cachedRes = await getCachedPost(ctx, rkey);
   if (!skipCache && cachedRes) {
     return cachedRes;
   }
 
-  const repo = ctx.cloudflare.env.ATP_IDENTIFIER;
+  const repo = ctx.runtime.env.ATP_IDENTIFIER;
   const res = await atpAgent(ctx).com.atproto.repo.getRecord({
     collection: 'com.whtwnd.blog.entry',
     repo,
