@@ -1,14 +1,14 @@
-import {WhtwndBlogEntryRecord, WhtwndBlogEntryView} from '../types'
-import {uriToRkey} from './uriToRkey'
+import type { WhtwndBlogEntryRecord, WhtwndBlogEntryView } from "../types";
+import { uriToRkey } from "./uriToRkey";
 
 export const whtwndBlogEntryRecordToView = ({
   uri,
   cid,
   value,
 }: {
-  uri: string
-  cid: string
-  value: WhtwndBlogEntryRecord
+  uri: string;
+  cid: string;
+  value: WhtwndBlogEntryRecord;
 }): WhtwndBlogEntryView => {
   return {
     rkey: uriToRkey(uri),
@@ -17,5 +17,5 @@ export const whtwndBlogEntryRecordToView = ({
     content: value.content,
     createdAt: value.createdAt,
     banner: value.ogp?.url ?? undefined,
-  }
-}
+  };
+};

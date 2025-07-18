@@ -1,0 +1,33 @@
+---
+import Shell from "~/layouts/shell.astro";
+import { frens } from "~/ring";
+---
+<Shell>
+  <div class="max-w-2xl mx-auto flex flex-col gap-2">
+    <span class="font-bold text-lg text-blue">Webring</span>
+
+    <div class="flex items-center gap-4">
+      {frens.map(fren => (
+        <a href={fren.url}>
+          <img
+            src={fren.img}
+            class="rendering-pixelated"
+            width={88}
+            height={31}
+            alt={fren.name}
+          />
+        </a>
+      ))}
+    </div>
+    <div class="p-2 bg-base01 block">
+      <p>Wanna add me to yours? Here's my badge!</p>
+      <img
+        src={`/88x31/hayden.png`}
+        class="rendering-pixelated"
+        width={88}
+        height={31}
+        alt="Hayden"
+      />
+    </div>
+  </div>
+</Shell>

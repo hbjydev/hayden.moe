@@ -1,4 +1,5 @@
-@import '@fontsource/geist-mono' layer(base);
+@import '@fontsource/geist-sans';/* layer(base); */
+@import '@fontsource/geist-mono';/* layer(base); */
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
@@ -80,8 +81,8 @@
 
   code {
     color: var(--color-base0E);
-    &::before { content: "" !important };
-    &::after { content: "" !important };
+    &::before { content: "" !important }
+    &::after { content: "" !important }
   }
 }
 
