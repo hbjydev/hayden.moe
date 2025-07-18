@@ -10,6 +10,7 @@ import { loadWasm } from 'shiki';
 
 const rkey = Astro.params.rkey;
 
+// @ts-ignore
 loadWasm(await import('shiki/onig.wasm'));
 
 const markdownProcessor = await createMarkdownProcessor();
