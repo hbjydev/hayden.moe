@@ -1,5 +1,4 @@
-@import '@fontsource/geist-sans';/* layer(base); */
-@import '@fontsource/geist-mono';/* layer(base); */
+@import '@fontsource/geist-mono' layer(base);
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
