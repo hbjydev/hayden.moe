@@ -6,9 +6,6 @@ export const Header = () => (
     </a>
 
     <a className="hover:text-base0E" href="/posts">posts</a>
-    <a className="hover:text-base0E" href="https://bsky.app/profile/hayden.moe">bluesky</a>
-    <a className="hover:text-base0E" href="https://twitch.tv/hayden_dev">twitch</a>
-    <a className="hover:text-base0E" href="https://github.com/hbjydev">github</a>
     <a className="hover:text-base0E border-r! border-muted" href="/rss.xml">rss</a>
   </nav>
 );

@@ -1,5 +1,4 @@
 import type { MetaFunction } from "react-router";
-import { frens } from "src/ring";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,7 +10,7 @@ export const meta: MetaFunction = () => {
 export default () => {
   return (
     <>
-      <div className="prose max-w-5xl">
+      <div className="prose max-w-2xl mx-auto">
         <p>
           I love working with all things DevOps, from automation and software
           engineering to full-on platform engineering. I’m a huge advocate for making
@@ -40,30 +39,23 @@ export default () => {
         </p>
       </div>
 
-      <div className="mt-6 max-w-5xl flex flex-col gap-2">
-        <p className="text-blue underline">Webring</p>
-        <div className="flex items-center gap-4">
-          {frens.map((fren, idx) => (
-            <a href={fren.url} key={idx}>
-              <img
-                src={fren.img}
-                className="rendering-pixelated"
-                width={88}
-                height={31}
-                alt={fren.name}
-              />
-            </a>
-          ))}
+      <div className="max-w-sm w-full mx-auto grid md:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-2">
+          <span className="font-bold text-lg">On the web</span>
+          <ul className="list-disc list-inside">
+            <li><a className="text-pink underline" href="https://bsky.app/profile/hayden.moe">Bluesky</a></li>
+            <li><a className="text-pink underline" href="https://discord.gg/vmuNsEuUyW">Discord</a></li>
+            <li><a className="text-pink underline" href="https://github.com/hbjydev">GitHub</a></li>
+            <li><a className="text-pink underline" href="https://twitch.tv/hayden_dev">Twitch</a></li>
+            <li><a className="text-pink underline" href="mailto:hayden@hayden.moe">Email</a></li>
+          </ul>
         </div>
-        <div className="p-2 bg-base01 block">
-          <p>Wanna add me to yours? Here's my badge!</p>
-          <img
-            src={`/88x31/hayden.png`}
-            className="rendering-pixelated"
-            width={88}
-            height={31}
-            alt="Hayden"
-          />
+        <div className="flex flex-col gap-2">
+          <span className="font-bold text-lg">On this site</span>
+          <ul className="list-disc list-inside">
+            <li><a className="text-pink underline" href="/posts">Blog</a></li>
+            <li><a className="text-pink underline" href="/ring">Webring</a></li>
+          </ul>
         </div>
       </div>
     </>

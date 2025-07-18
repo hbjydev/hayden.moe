@@ -6,11 +6,6 @@ export type Fren = {
 
 export const frens: Fren[] = [
   {
-    name: 'Sapphic Angels',
-    img: 'https://sapphic.moe/buttons/friends/sapphic.png',
-    url: 'https://sapphic.moe',
-  },
-  {
     name: 'Alyxia',
     img: 'https://alyxia.dev/static/img/88x31/self.png',
     url: 'https://alyxia.dev',
