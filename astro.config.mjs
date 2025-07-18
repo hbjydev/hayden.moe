@@ -13,6 +13,11 @@ export default defineConfig({
     }
   }),
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      rollupOptions: {
+        external: ['shiki/onig.wasm'],
+      },
+    },
   }
 });

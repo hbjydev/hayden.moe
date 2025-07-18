@@ -14,8 +14,8 @@ jobs:
       - run: bun run build
       - uses: actions/upload-artifact@v4
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -29,13 +29,13 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - uses: actions/download-artifact@v4
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
       - run: bun install
       - run: bun run build
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./build/client
+          command: pages deploy ./dist/client
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
