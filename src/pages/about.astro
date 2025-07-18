@@ -1,0 +1,119 @@
+---
+import Shell from '../layouts/shell.astro';
+
+const birthdate = "2003-11-13T03:00:00Z";
+const ageDiff = new Date(Date.now() - new Date(birthdate).getTime());
+const age = ageDiff.getUTCFullYear() - 1970
+---
+
+<Shell title="hayden@web ~/about">
+  <div class="prose max-w-2xl mx-auto">
+    <h1>About me</h1>
+
+    <p>
+      Hi! I'm Hayden. I'm a software engineer turned platform engineer from the
+      UK. I'm a {age}-year old from the UK, based in Sheffield.
+    </p>
+
+    <p>
+      I'm... reasonably active online, tending to spend my time playing games,
+      working on personal projects, or otherwise being offline with friends or
+      my partner in the meatspace.
+    </p>
+
+    <p>
+      I'm proudly autistic and bisexual, <i>possibly</i> a little ADHD, though
+      I don't care enough to sit through the multiple-generations-long waiting
+      list with the NHS to find out 'officially', I'm lucky enough to not have
+      my mental state be too obstructive to my work or my life.
+    </p>
+
+    <h2>My interests</h2>
+
+    <p>
+      I'm a pretty open book when it comes to my interests, in that I don't have
+      <i>tons</i> to begin with. In my free time, I usually end up
+      <span class="line-through">trying to bend computers to my will</span>
+      programming or learning new compsci concepts and disciplines.
+    </p>
+
+    <p>
+      Primarily over the past couple years, my interest has been in the sort of
+      mid-level computing stuff. Not quite end-user, like web apps and iOS apps,
+      not quite low-level, like kernels or drivers, but more infrastructure.
+      One of my big interests is playing around with self-hosting various apps
+      &amp; services on my home Kubernetes cluster,
+      <a href="https://github.com/hbjydev/phoebe">Phoebe</a>, as well as playing
+      with the not-quite-end-user style of software, like AT Proto Personal Data
+      Servers, which I think are cool for reasons I'm sure I'll explain in a
+      blog post at some point in time.
+    </p>
+
+    <p>
+      <i>Outside</i> of programming, though... I enjoy gaming, particularly
+      military simulators ('milsims') and flight simulators, but rarely the
+      middle of that venn diagram, I'm much more of a "1000 hours in Arma 3 and
+      MSFS 2024" person than a "500 hours in Arma 3, 700 in War Thunder" person.
+    </p>
+
+    <p>
+      As with any 18-year-old, I went through a phase of constantly going out to
+      drink with friends and going to clubs and such, but these days I much
+      prefer sitting with some mates at a nice dive bar, just having a natter
+      and shooting the proverbial shit with them for a few hours.
+    </p>
+
+    <h2>My toolchain</h2>
+
+    <h3>Computers</h3>
+
+    <ul>
+      <li>titan: my arch install, also my main dev setup and recently gaming too</li>
+      <li>tethys: my windows install, mainly for flight sim reasons</li>
+      <li>phoebe: my (currently) single-node talos linux cluster running my self-hosted services</li>
+    </ul>
+
+    <p>
+      Note: I used to use NixOS on Phoebe before a brief trial of Proxmox
+      followed by a full conversion to Talos. But... <a href="/posts/3lfcifg7u4s2l/#where-does-nix-fall-over">I fell out of love with
+      Nix</a>, and NixOS has its own issues.
+    </p>
+
+    <h3>Programming Languages</h3>
+
+    <p>In order of my most to least enjoyed &amp; loved:</p>
+
+    <ul>
+      <li>Rust</li>
+      <li>Go</li>
+      <li>TypeScript</li>
+      <li>Kotlin</li>
+      <li>C# (specifically .NET)</li>
+      <li>Java</li>
+      <li>JavaScript (TypeScript is infinitely better)</li>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+      <li>Python (sorry, had to really show how much i dislike it with the ...s above)</li>
+    </ul>
+
+    <p>
+      Now, this list isn't exhaustive, and I pick up new languages pretty quick,
+      so I'm sure it'll grow over time.
+    </p>
+
+    <h3>Editor</h3>
+
+    <p>
+      Primarily, I use <a href="https://neovim.io">Neovim</a>, which is a fork
+      of Vim with some extra quality-of-life features like Lua for configuration
+      over Vimscript/VimL, and built-in LSP support.
+    </p>
+
+    <p>
+      If you want to see or try out my config, it lives
+      <a href="https://github.com/hbjydev/hvim.lua">on GitHub</a>.
+    </p>
+
+  </div>
+</Shell>
