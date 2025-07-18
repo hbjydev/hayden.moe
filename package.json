@@ -5,11 +5,10 @@
   "packageManager": "bun@1.2.16",
   "scripts": {
     "build": "astro build",
-    "deploy": "wrangler pages deploy ./build/client",
+    "deploy": "wrangler deploy",
     "dev": "astro dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "wrangler pages dev ./build/client",
-    "typecheck": "react-router typegen && tsc",
+    "start": "wrangler dev",
     "typegen": "wrangler types"
   },
   "dependencies": {
