@@ -9,17 +9,22 @@ import '../style.css';
 
 interface Props {
   title?: string;
+  description?: string;
   children: any;
 }
 
-const { title } = Astro.props;
+const {
+  title = 'hayden@web ~',
+  description = 'The blog of a lowly DevOps Engineer from the UK. Federated on atproto!',
+} = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title ?? 'hayden@web ~'}</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <BaseHead />
   </head>
   <body class="antialiased bg-black text-white font-mono tracking-normal leading-normal flex flex-col min-h-screen selection:bg-base0E selection:text-black">

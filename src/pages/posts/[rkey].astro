@@ -16,8 +16,9 @@ loadWasm(await import('shiki/onig.wasm'));
 const markdownProcessor = await createMarkdownProcessor();
 const post = await getPost(Astro.locals, rkey!);
 const content = await markdownProcessor.render(post.content)
+const shortContent = post.content.slice(0, 200).trimEnd() + '...';
 ---
-<Shell>
+<Shell title={post.title} description={shortContent}>
   <header class="max-w-2xl mx-auto w-full">
     <h1 class="font-bold before-hash-1">{post.title}</h1>
     <span class="text-base03">
