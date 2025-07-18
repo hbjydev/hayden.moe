@@ -9,17 +9,9 @@ jobs:
     name: Build
     steps:
       - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
-
-      - run: pnpm install
-      - run: pnpm build
-
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - run: bun run build
       - uses: actions/upload-artifact@v4
         with:
           name: build
@@ -34,20 +26,13 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
-
+      - uses: oven-sh/setup-bun@v2
       - uses: actions/download-artifact@v4
         with:
           name: build
           path: build
-
-      - run: pnpm install
+      - run: bun install
+      - run: bun run build
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
