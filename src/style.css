@@ -44,6 +44,8 @@
 @utility prose {
   color: var(--color-white) !important;
 
+  strong { color: var(--color-white) !important }
+
   a { color: var(--color-pink) }
 
   h1, h2, h3, h4, h5, h6 {
