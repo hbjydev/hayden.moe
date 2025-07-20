@@ -44,7 +44,7 @@
 @utility prose {
   color: var(--color-white) !important;
 
-  strong { color: var(--color-white) !important }
+  strong { color: var(--color-blue) !important }
 
   a { color: var(--color-pink) }
 
