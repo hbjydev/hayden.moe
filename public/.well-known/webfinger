@@ -1,9 +1,0 @@
-{
-  "subject": "acct:hayden@hayden.moe",
-  "links": [
-    {
-      "rel": "http://openid.net/specs/connect/1.0/issuer",
-      "href": "https://sso.hayden.moe/application/o/tailscale/"
-    }
-  ]
-}
