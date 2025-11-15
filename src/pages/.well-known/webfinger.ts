@@ -17,7 +17,7 @@ export const GET = async (c: APIContext) => {
     links: [
       {
         rel: "http://openid.net/specs/connect/1.0/issuer",
-        href: "https://sso.hayden.moe/application/o/tailscale/"
+        href: "https://id.hayden.moe/realms/haydenmoe/"
       }
     ]
   });
