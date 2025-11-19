@@ -12,7 +12,6 @@
     "typegen": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.0",
     "@astrojs/markdown-remark": "^6.3.3",
     "@astrojs/rss": "^4.0.12",
     "@atproto/api": "^0.15.26",
@@ -23,7 +22,6 @@
     "shiki": "^3.8.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250722.0",
     "@tailwindcss/postcss": "^4.0.0",
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.1.11",

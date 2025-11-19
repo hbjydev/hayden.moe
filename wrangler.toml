@@ -12,17 +12,9 @@ custom_domain = true
 pattern = "hbjy.dev"
 custom_domain = true
 
-[vars]
-ATP_IDENTIFIER = "hayden.moe"
-ATP_SERVICE = "https://pds.hayden.moe/"
-
 [observability]
-enabled = true
+enabled = false
 
 [assets]
 binding = "ASSETS"
 directory = "./dist"
-
-[[kv_namespaces]]
-binding = "CACHE"
-id = "d7e88adf8eb44f7b9e0544b43bfb27b4"

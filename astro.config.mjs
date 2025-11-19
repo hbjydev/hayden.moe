@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import cloudflare from '@astrojs/cloudflare';
 import childProcess from "child_process";
 
 import tailwindcss from '@tailwindcss/vite';
@@ -13,12 +12,6 @@ const hash = childProcess
 export default defineConfig({
   site: 'https://hayden.moe',
 
-  adapter: cloudflare({
-    imageService: 'cloudflare',
-    platformProxy: {
-      enabled: true,
-    }
-  }),
   vite: {
     plugins: [tailwindcss()],
     define: {
