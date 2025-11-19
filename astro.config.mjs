@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // obtain Git commit hash
 const hash = childProcess
-  .execSync("git rev-parse --short HEAD")
+  .execSync("git rev-parse HEAD")
   .toString()
   .trim();
 
