@@ -5,7 +5,7 @@ export const GET = () => {
     },
     "org.matrix.msc4143.rtc_foci": [
       {
-        type:"livekit",
+        type: "livekit",
         livekit_service_url: "https://livekit.hayden.moe",
       },
     ],
