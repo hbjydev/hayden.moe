@@ -21,7 +21,12 @@ description = "Deploy the site"
 secrets = ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
 env = { AWS_REGION = "uk", AWS_ENDPOINT_URL_S3 = "https://s3.uk.io.cloud.ovh.net" }
 run = '''
-aws s3 sync ./dist s3://hayden.moe --region $AWS_REGION --endpoint-url $AWS_ENDPOINT_URL_S3 --delete
+aws s3 sync \
+  ./dist s3://hayden.moe \
+  --region $AWS_REGION \
+  --endpoint-url $AWS_ENDPOINT_URL_S3 \
+  --delete \
+  --acl public-read
 '''
 
 [secrets.fnox]
