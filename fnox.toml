@@ -1,0 +1,10 @@
+default_provider = "op"
+
+[providers.op]
+type = "1password"
+vault = "Private"
+account = "my.1password.com"
+
+[secrets]
+AWS_ACCESS_KEY_ID = { provider = "op", value = "ci-website-push/accessKey" }
+AWS_SECRET_ACCESS_KEY = { provider = "op", value = "ci-website-push/secretKey" }
