@@ -15,6 +15,9 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  MISE_ENV: ci
+
 jobs:
   astro-build-deploy:
     name: Build & Deploy Astro

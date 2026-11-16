@@ -18,6 +18,9 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  MISE_ENV: ci
+
 jobs:
   astro-build:
     name: Build Astro
