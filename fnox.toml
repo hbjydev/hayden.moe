@@ -2,7 +2,7 @@ default_provider = "op"
 
 [providers.op]
 type = "1password"
-vault = "Private"
+vault = "CI/CD"
 account = "my.1password.com"
 
 [secrets]
