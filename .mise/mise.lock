@@ -6,7 +6,6 @@ lockfile_version = 4
 version = "2.11.0"
 backend = "packslip:github.com/aubepkg/aube"
 specifiers = ["v2.11.0"]
-unsupported_platforms = ["macos-x64"]
 
 [tools.aube."platforms.linux-arm64"]
 checksum = "sha256:6b188df1296f24565f59483583a9238c075aad0aca541f111a582544b97e261b"
@@ -48,7 +47,6 @@ repository_ids = { repository = "1214542327" }
 version = "2.42.3"
 backend = "aqua:aws/aws-cli"
 specifiers = ["2.42.3"]
-unsupported_platforms = ["windows-x64"]
 
 [tools.awscli."platforms.linux-arm64"]
 checksum = "sha256:7c512283f5293c6fb0832ad648198993185889b22ea8b19bcd04c153dabc8643"
