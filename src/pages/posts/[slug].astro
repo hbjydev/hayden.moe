@@ -14,7 +14,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Shell title="hayden@web ~/about" wide>
+<Shell title={`hayden@web ~/posts/${post.data.title}`} wide>
   <div class="w-full flex items-center justify-center pb-4 border-b border-muted">
     <div class="prose flex flex-col max-w-2xl w-full mx-auto px-4">
       <h1>{post.data.title}</h1>
