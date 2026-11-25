@@ -24,7 +24,10 @@
   --color-black: var(--color-base00);
   --color-white: var(--color-base04);
   --color-gray: var(--color-base02);
-  --color-muted: var(--color-base02);
+  /* Carbon Cool Gray, the same family as base04/base05, so it sits with the text colours */
+  --color-muted: #878d96;   /* cool gray 50: secondary text, 5.4:1 on base00 */
+  --color-subtle: #697077;  /* cool gray 60: decorative glyphs, 3.6:1 on base00 */
+  --color-line: var(--color-base02); /* borders and dividers */
   --color-pink: var(--color-base0A);
   --color-blue: var(--color-base0F);
 
@@ -51,7 +54,7 @@
   h1, h2, h3, h4, h5, h6 {
     color: var(--color-white);
     font-size: 1em;
-    &::before { color: var(--color-base03); }
+    &::before { color: var(--color-subtle); }
   }
 
   h1::before { content: '# ' / '' !important; }
@@ -62,14 +65,14 @@
   h6::before { content: '###### ' / '' !important; }
 
   hr {
-    border-color: var(--color-muted);
+    border-color: var(--color-line);
     width: 100%;
     margin: 2em 0;
   }
 
   blockquote {
     color: var(--color-blue);
-    border-inline-start-color: var(--color-base03);
+    border-inline-start-color: var(--color-subtle);
     font-style: normal
     & p { color: var(--color-base04) }
   }
@@ -104,21 +107,21 @@
 @utility before-hash-1 {
   &::before {
     content: '# ' / '';
-    color: var(--color-base03);
+    color: var(--color-subtle);
   }
 }
 
 @utility before-hash-2 {
   &::before {
     content: '## ' / '';
-    color: var(--color-base03);
+    color: var(--color-subtle);
   }
 }
 
 @utility before-hash-3 {
   &::before {
     content: '### ' / '';
-    color: var(--base03);
+    color: var(--color-subtle);
   }
 }
 
