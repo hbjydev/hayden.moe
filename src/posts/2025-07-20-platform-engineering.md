@@ -4,7 +4,7 @@ description: What is Platform Engineering and why is it useful?
 pubDate: 2025-07-20
 ---
 
-So I recently accepted a job offer to work on a Platform team. This is huge news
+I recently accepted a job offer to work on a Platform team. This is huge news
 for me because Platform Engineering is what I've always wanted to do in tech,
 since the point where I cared enough about infrastructure to have an interest
 in DevEx. It's where I always wanted to end up in my career, so I'm very excited
