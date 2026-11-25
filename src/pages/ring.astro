@@ -6,7 +6,7 @@ import { frens } from "~/ring";
   <div class="max-w-2xl mx-auto flex flex-col gap-2">
     <span class="font-bold text-lg text-blue">Webring</span>
 
-    <div class="flex items-center gap-4">
+    <div class="grid grid-cols-6 items-center gap-4">
       {frens.map(fren => (
         <a href={fren.url}>
           <img

@@ -6,6 +6,11 @@ export type Fren = {
 
 export const frens: Fren[] = [
   {
+    name: 'OwO',
+    img: '/88x31/ow-ops.png',
+    url: 'https://ow-ops.eu',
+  },
+  {
     name: 'Alyxia',
     img: 'https://alyxia.dev/static/img/88x31/self.png',
     url: 'https://alyxia.dev',
@@ -16,19 +21,9 @@ export const frens: Fren[] = [
     url: 'https://aria.coffee',
   },
   {
-    name: 'LeNooby',
-    img: 'https://lenooby09.tech/88x31/88x31.png',
-    url: 'https://lenooby09.tech',
-  },
-  {
     name: 'notnite',
     img: 'https://notnite.com/buttons/notnite.png',
     url: 'https://notnite.com',
-  },
-  {
-    name: '0x5066',
-    img: 'https://erisdump.neocities.org/buttons/88x31.gif',
-    url: 'https://erisdump.neocities.org',
   },
   {
     name: 'Buh',
