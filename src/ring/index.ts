@@ -11,6 +11,11 @@ export const frens: Fren[] = [
     url: 'https://ow-ops.eu',
   },
   {
+    name: 'Alex',
+    img: '/88x31/alex.gif',
+    url: 'https://nyanyamachine.dev',
+  },
+  {
     name: 'Alyxia',
     img: 'https://alyxia.dev/static/img/88x31/self.png',
     url: 'https://alyxia.dev',
