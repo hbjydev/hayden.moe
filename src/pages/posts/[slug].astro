@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import Shell from '~/layouts/shell.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Shell title="hayden@web ~/about" wide>
+  <div class="w-full flex items-center justify-center pb-4 border-b border-muted">
+    <div class="prose flex flex-col max-w-2xl w-full mx-auto px-4">
+      <h1>{post.data.title}</h1>
+      <span class="text-sm text-muted">{post.data.description}</span>
+    </div>
+  </div>
+
+  <div class="prose max-w-2xl w-full mx-auto py-5 px-4">
+    <Content />
+  </div>
+</Shell>
