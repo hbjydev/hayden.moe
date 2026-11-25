@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "~/components/formatted-date.astro";
 import Shell from "~/layouts/shell.astro";
 
-const posts = await getCollection('posts');
+const posts = await getCollection('posts', (post) => !post.data.unlisted);
 ---
 
 <Shell title="hayden@web ~/posts" wide>

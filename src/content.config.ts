@@ -12,6 +12,7 @@ const posts = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
+    unlisted: z.boolean().default(false),
   }),
 });
 
