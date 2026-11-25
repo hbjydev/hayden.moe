@@ -7,7 +7,7 @@ const posts = await getCollection('posts', (post) => !post.data.unlisted);
 ---
 
 <Shell title="hayden@web ~/posts" wide>
-  <div class="w-full flex items-center justify-center pb-4 border-b border-muted">
+  <div class="w-full flex items-center justify-center pb-4 border-b border-line">
     <div class="prose flex flex-col max-w-2xl px-4 w-full mx-auto">
       <h1>Posts</h1>
       <span class="text-sm text-muted">My blog archive</span>
@@ -15,7 +15,7 @@ const posts = await getCollection('posts', (post) => !post.data.unlisted);
   </div>
 
   <div class="py-5 max-w-2xl w-full px-4 mx-auto">
-    <ul class="divide-y divide-muted">
+    <ul class="divide-y divide-line">
       {posts.sort((a, b) => b.id.localeCompare(a.id)).map((post) => (
         <li class="py-4 first:pt-0">
           <a href={`/posts/${post.id}`} class="flex flex-col">
@@ -25,7 +25,7 @@ const posts = await getCollection('posts', (post) => !post.data.unlisted);
                 <FormattedDate date={post.data.pubDate} />
               </span>
             </div>
-            <p class="text-sm text-base03">{post.data.description}</p>
+            <p class="text-sm text-muted">{post.data.description}</p>
           </a>
         </li>
       ))}
