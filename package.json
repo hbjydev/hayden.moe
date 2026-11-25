@@ -18,7 +18,7 @@
     "astro": "7.4.13",
     "feed": "^6.0.0",
     "isbot": "^5.1.17",
-    "shiki": "^3.8.1"
+    "shiki": "^4.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
