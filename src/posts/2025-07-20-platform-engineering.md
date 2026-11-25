@@ -46,8 +46,8 @@ Your Platform team's goal in life should be to implement what some have taken to
 calling an Internal Development Platform (IDP, not to be confused with IdP, or
 "Identity Provider", tech sucks at acronyms). An IDP in concept is like a mini
 cloud inside a bigger cloud. It enables development teams to own their
-infrastructure, while not needing them to become experts in <insert your cloud
-provider here>.
+infrastructure, while not needing them to become experts in &lt;insert your cloud
+provider here&gt;.
 
 The Platform team will prescribe a 'golden path' for managing things like
 databases, Kubernetes clusters, ECS tasks, SQS queues, BigQuery tables, etc.,
