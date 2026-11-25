@@ -13,10 +13,9 @@ to be starting that role.
 However, what I've also noticed is that while Platform Engineers know what it
 is they do, it's a relatively recent job description in the grand scheme of
 things; the vast majority of people I've spoken to in the Meatspace(tm)(c)(R)
-have no idea what Platform actually does. So this post is supposed to be my
-introducton to my interpretation of what Platform Engineering is, and why a
-Platform team is a really useful tool for any organization with an engineering
-division.
+have no idea what Platform actually does. So this post is me conveying my
+personal interpretation of what Platform Engineering is, and why a Platform
+team is a really useful tool for any organization with an engineering division.
 
 # The Problem
 
