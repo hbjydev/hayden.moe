@@ -4,7 +4,7 @@ experimental = true
 [tools]
 aube = { version = "2.10.0", workflow = ["release-plz.yml@refs/heads/main", "release.yml@refs/heads/main"] }
 awscli = { version = "2.42.3", symlink_bins = "true" }
-fnox = { version = "1.48.0", workflow = "release.yml" }
+fnox = { version = "v1.50.0", workflow = "release.yml" }
 jactionlint = { version = "2.6.0", workflow = "release.yaml" }
 shellcheck = "0.11.0"
 
