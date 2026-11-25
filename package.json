@@ -2,7 +2,6 @@
   "name": "hayden.moe",
   "private": true,
   "type": "module",
-  "packageManager": "aube@2.10.0",
   "scripts": {
     "build": "astro build",
     "deploy": "wrangler deploy",
