@@ -44,33 +44,34 @@ signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/releas
 repository_ids = { repository = "1214542327" }
 
 [[tools.awscli]]
-version = "2.42.3"
+version = "2.42.4"
 backend = "aqua:aws/aws-cli"
-specifiers = ["2.42.3"]
+specifiers = ["2.42.4"]
+unsupported_platforms = ["windows-x64"]
 
 [tools.awscli."platforms.linux-arm64"]
-checksum = "sha256:7c512283f5293c6fb0832ad648198993185889b22ea8b19bcd04c153dabc8643"
-url = "https://awscli.amazonaws.com/awscli-exe-linux-aarch64-2.42.3.zip"
+checksum = "sha256:d0203a83caa162118c128ad16bc6c11835e998bd23763a3b195aeb323c78d010"
+url = "https://awscli.amazonaws.com/awscli-exe-linux-aarch64-2.42.4.zip"
 
 [tools.awscli."platforms.linux-arm64-musl"]
-checksum = "sha256:7c512283f5293c6fb0832ad648198993185889b22ea8b19bcd04c153dabc8643"
-url = "https://awscli.amazonaws.com/awscli-exe-linux-aarch64-2.42.3.zip"
+checksum = "sha256:d0203a83caa162118c128ad16bc6c11835e998bd23763a3b195aeb323c78d010"
+url = "https://awscli.amazonaws.com/awscli-exe-linux-aarch64-2.42.4.zip"
 
 [tools.awscli."platforms.linux-x64"]
-checksum = "sha256:09a4a71458061ce4e6e8c1ddbeb5d128c219ef7c9906b7b92c3b542944c025c8"
-url = "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.42.3.zip"
+checksum = "sha256:8998885d7fc32370c50efc2e44746c34b222a03d70015113a5554f98be79165c"
+url = "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.42.4.zip"
 
 [tools.awscli."platforms.linux-x64-musl"]
-checksum = "sha256:09a4a71458061ce4e6e8c1ddbeb5d128c219ef7c9906b7b92c3b542944c025c8"
-url = "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.42.3.zip"
+checksum = "sha256:8998885d7fc32370c50efc2e44746c34b222a03d70015113a5554f98be79165c"
+url = "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.42.4.zip"
 
 [tools.awscli."platforms.macos-arm64"]
-checksum = "sha256:d98091b3a3d170fa7f9e24c5594a9664aff6dbf048cdd588bfe043e27b3ad239"
-url = "https://awscli.amazonaws.com/AWSCLIV2-2.42.3.pkg"
+checksum = "sha256:6f5a5d523f128bfa736841523fabe936a9a4c9da7fce7273c535043a53016ea5"
+url = "https://awscli.amazonaws.com/AWSCLIV2-2.42.4.pkg"
 
 [tools.awscli."platforms.macos-x64"]
-checksum = "sha256:d98091b3a3d170fa7f9e24c5594a9664aff6dbf048cdd588bfe043e27b3ad239"
-url = "https://awscli.amazonaws.com/AWSCLIV2-2.42.3.pkg"
+checksum = "sha256:6f5a5d523f128bfa736841523fabe936a9a4c9da7fce7273c535043a53016ea5"
+url = "https://awscli.amazonaws.com/AWSCLIV2-2.42.4.pkg"
 
 [[tools.fnox]]
 version = "1.50.0"
