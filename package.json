@@ -12,11 +12,11 @@
     "typegen": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^6.3.3",
-    "@astrojs/rss": "^4.0.12",
+    "@astrojs/markdown-remark": "7.3.10",
+    "@astrojs/rss": "4.0.19",
     "@atproto/api": "^0.15.26",
     "@fontsource/geist-mono": "^5.1.0",
-    "astro": "^5.12.0",
+    "astro": "7.4.13",
     "feed": "^4.2.2",
     "isbot": "^5.1.17",
     "shiki": "^3.8.1"
