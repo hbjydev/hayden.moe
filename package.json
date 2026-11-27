@@ -12,12 +12,15 @@
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.3.10",
-    "@astrojs/rss": "4.0.19",
+    "@astrojs/rss": "^4.0.19",
     "@atproto/api": "^0.32.0",
     "@fontsource/geist-mono": "^5.1.0",
     "astro": "7.4.13",
     "feed": "^6.0.0",
     "isbot": "^5.1.17",
+    "markdown-it": "^15.0.3",
+    "pixelarticons": "^2.4.2",
+    "sanitize-html": "^2.18.2",
     "shiki": "^4.0.0"
   },
   "devDependencies": {
@@ -25,6 +28,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.1.11",
     "@types/bun": "^1.2.19",
+    "@types/sanitize-html": "^2.16.2",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
     "eslint": "^8.57.1",

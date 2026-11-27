@@ -1,0 +1,12 @@
+---
+interface Props {
+  icon: string;
+  href: string;
+  title?: string;
+}
+const { icon, href, title } = Astro.props;
+---
+
+<a href={href} class="flex items-center justify-center w-8 h-8 bg-base0E text-black hover:bg-base09 hover:cursor-pointer" title={title}>
+  <i class={`pixelart-icons-font-${icon} text-[18px]!`} />
+</a>

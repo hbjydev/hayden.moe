@@ -1,5 +1,7 @@
 @import '@fontsource/geist-mono' layer(base);
 
+@import 'pixelarticons/fonts/pixelart-icons-font.css';
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 

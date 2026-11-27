@@ -1,18 +1,19 @@
 ---
 import { getCollection } from "astro:content";
 import FormattedDate from "~/components/formatted-date.astro";
+import IconButton from "~/components/icon-button.astro";
+import PageTitle from "~/components/page-title.astro";
 import Shell from "~/layouts/shell.astro";
 
 const posts = await getCollection('posts', (post) => !post.data.unlisted);
 ---
 
 <Shell title="hayden@web ~/posts" wide>
-  <div class="w-full flex items-center justify-center pb-4 border-b border-line">
-    <div class="prose flex flex-col max-w-2xl px-4 w-full mx-auto">
-      <h1>Posts</h1>
-      <span class="text-sm text-muted">My blog archive</span>
-    </div>
-  </div>
+  <PageTitle title="Posts" description="My blog archive">
+    <Fragment slot="actions">
+      <IconButton icon="rss" href="/rss.xml" title="RSS Feed" />
+    </Fragment>
+  </PageTitle>
 
   <div class="py-5 md:max-w-2xl w-full mx-auto">
     <ul class="divide-y divide-line px-0 md:px-4">
