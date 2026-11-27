@@ -1,12 +1,16 @@
 ---
+import PageTitle from "~/components/page-title.astro";
 import Shell from "~/layouts/shell.astro";
 import { frens } from "~/ring";
 ---
-<Shell>
-  <div class="max-w-2xl mx-auto flex flex-col gap-2">
+
+<Shell title="hayden@web ~/ring" wide>
+  <PageTitle title="Webring" description="My friends and their 88x31s!" />
+
+  <div class="max-w-2xl w-full mx-auto flex flex-col gap-2 px-4">
     <span class="font-bold text-lg text-blue">Webring</span>
 
-    <div class="grid grid-cols-6 items-center gap-4">
+    <div class="grid grid-cols-3 xs:grid-cols-4 md:grid-cols-6 sm:grid-cols-5 items-center gap-4">
       {frens.map(fren => (
         <a href={fren.url}>
           <img

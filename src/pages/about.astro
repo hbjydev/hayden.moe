@@ -1,4 +1,5 @@
 ---
+import PageTitle from '~/components/page-title.astro';
 import Shell from '../layouts/shell.astro';
 
 const birthdate = "2003-11-13T03:00:00Z";
@@ -6,9 +7,10 @@ const ageDiff = new Date(Date.now() - new Date(birthdate).getTime());
 const age = ageDiff.getUTCFullYear() - 1970
 ---
 
-<Shell title="hayden@web ~/about">
-  <div class="prose max-w-2xl mx-auto">
-    <h1>About me</h1>
+<Shell title="hayden@web ~/about" wide>
+  <PageTitle title="About me" description="Who I am and what I get up to" />
+
+  <div class="prose max-w-2xl mx-auto px-4 py-5">
 
     <p>
       Hi! I'm Hayden. I'm a software engineer turned platform engineer from the
