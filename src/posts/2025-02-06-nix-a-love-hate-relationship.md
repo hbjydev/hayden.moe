@@ -156,7 +156,7 @@ willing to jump through several hoops and get deep into the documentation to
 find things like `specialArgs` or overlays.
 
 A lot of people say this is a big benefit of Nix/NixOS, but as a former sysadmin
-who's had his fair share of horribly broken systems post-update, this isn't
+who's had her fair share of horribly broken systems post-update, this isn't
 something I'm comfortable with. I'm not going to suggest that atomicity is
 inherently bad, it's just not something I personally like.
 
